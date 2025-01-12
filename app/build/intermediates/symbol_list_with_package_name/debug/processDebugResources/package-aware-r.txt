@@ -3184,6 +3184,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_play
 drawable ic_player
 drawable ic_search
 drawable ic_search_black_24
@@ -3384,6 +3385,7 @@ id center_vertical
 id chain
 id chain2
 id chains
+id channel_group
 id channel_icon
 id channel_list
 id channel_name

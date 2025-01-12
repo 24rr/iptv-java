@@ -3,10 +3,13 @@ package com.iptvnator.player;
 import android.util.Base64;
 import androidx.media3.common.C;
 import androidx.media3.common.MediaItem;
+import androidx.media3.exoplayer.drm.DefaultDrmSessionManager;
+import androidx.media3.exoplayer.drm.DrmSessionManager;
+import androidx.media3.exoplayer.drm.FrameworkMediaDrm;
+import androidx.media3.exoplayer.drm.LocalMediaDrmCallback;
+import androidx.media3.exoplayer.drm.UnsupportedDrmException;
 import java.util.UUID;
 import java.util.Collections;
-import java.util.Map;
-import java.util.HashMap;
 
 public class DrmConfiguration {
     private final String scheme;
@@ -60,14 +63,57 @@ public class DrmConfiguration {
         }
     }
 
-    public String getClearKeyLicenseData() {
-        if (!"clearkey".equals(scheme.toLowerCase())) {
+    public DrmSessionManager buildDrmSessionManager() {
+        UUID drmUuid = getDrmUuid();
+        if (drmUuid == null) {
             return null;
         }
 
-        String jsonTemplate = "{\"keys\":[{\"kty\":\"oct\",\"k\":\"%s\",\"kid\":\"%s\"}]}";
-        String json = String.format(jsonTemplate, key, keyId);
-        return Base64.encodeToString(json.getBytes(), Base64.NO_WRAP);
+        try {
+            if ("clearkey".equals(scheme.toLowerCase())) {
+                
+                byte[] keyIdBytes = hexToBytes(keyId);
+                byte[] keyBytes = hexToBytes(key);
+                
+                String base64KeyId = Base64.encodeToString(keyIdBytes, 
+                    Base64.URL_SAFE | Base64.NO_PADDING | Base64.NO_WRAP);
+                String base64Key = Base64.encodeToString(keyBytes,
+                    Base64.URL_SAFE | Base64.NO_PADDING | Base64.NO_WRAP);
+
+                
+                String jsonTemplate = "{\"keys\":[{\"kty\":\"oct\",\"k\":\"%s\",\"kid\":\"%s\"}],\"type\":\"temporary\"}";
+                String json = String.format(jsonTemplate, base64Key, base64KeyId);
+                byte[] licenseData = json.getBytes();
+
+                
+                LocalMediaDrmCallback drmCallback = new LocalMediaDrmCallback(licenseData);
+
+                
+                return new DefaultDrmSessionManager.Builder()
+                    .setUuidAndExoMediaDrmProvider(drmUuid, uuid -> {
+                        try {
+                            return FrameworkMediaDrm.newInstance(uuid);
+                        } catch (UnsupportedDrmException e) {
+                            android.util.Log.e("DrmConfiguration", "Failed to create DRM instance", e);
+                            throw new RuntimeException(e);
+                        }
+                    })
+                    .build(drmCallback);
+            }
+        } catch (Exception e) {
+            android.util.Log.e("DrmConfiguration", "Error building DRM session manager", e);
+        }
+        return null;
+    }
+
+    private byte[] hexToBytes(String hex) {
+        int len = hex.length();
+        byte[] data = new byte[len / 2];
+        for (int i = 0; i < len; i += 2) {
+            data[i / 2] = (byte) ((Character.digit(hex.charAt(i), 16) << 4)
+                                 + Character.digit(hex.charAt(i+1), 16));
+        }
+        return data;
     }
 
     public MediaItem.DrmConfiguration buildMediaDrmConfiguration() {
@@ -80,36 +126,15 @@ public class DrmConfiguration {
             .setMultiSession(false);
 
         if ("clearkey".equals(scheme.toLowerCase())) {
-            try {
-                
-                String jsonTemplate = "{\"keys\":[{\"kty\":\"oct\",\"k\":\"%s\",\"kid\":\"%s\"}]}";
-                String json = String.format(jsonTemplate, key, keyId);
-                
-                
-                byte[] keySetId = json.getBytes();
-                
-                builder.setKeySetId(keySetId)
-                      .setMultiSession(false)
-                      .setForceDefaultLicenseUri(false);
-            } catch (Exception e) {
-                android.util.Log.e("DrmConfiguration", "Error setting up ClearKey", e);
-                return null;
-            }
+            
+            builder.setForceDefaultLicenseUri(false)
+                  .setMultiSession(false)
+                  .setLicenseRequestHeaders(Collections.emptyMap());
         } else if (licenseUrl != null) {
             builder.setLicenseUri(licenseUrl);
         }
 
         return builder.build();
-    }
-
-    private static byte[] hexStringToByteArray(String s) {
-        int len = s.length();
-        byte[] data = new byte[len / 2];
-        for (int i = 0; i < len; i += 2) {
-            data[i / 2] = (byte) ((Character.digit(s.charAt(i), 16) << 4)
-                    + Character.digit(s.charAt(i + 1), 16));
-        }
-        return data;
     }
 
     public static DrmConfiguration fromUrl(String url) {
@@ -152,4 +177,4 @@ public class DrmConfiguration {
             return null;
         }
     }
-}
+} 

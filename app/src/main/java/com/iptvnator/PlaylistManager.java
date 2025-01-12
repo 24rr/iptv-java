@@ -34,11 +34,11 @@ public class PlaylistManager {
         this.client = new OkHttpClient();
         this.playlistParser = new PlaylistParser();
         
-        // Clear invalid data if exists
+        
         try {
             prefs.getStringSet(RECENT_PLAYLISTS_KEY, null);
         } catch (ClassCastException e) {
-            // Clear the invalid data
+            
             prefs.edit().remove(RECENT_PLAYLISTS_KEY).apply();
         }
     }
@@ -75,7 +75,7 @@ public class PlaylistManager {
                     callback.onPlaylistLoaded(channels);
                 });
             } catch (Exception e) {
-                e.printStackTrace(); // Log the full stack trace
+                e.printStackTrace(); 
                 new Handler(Looper.getMainLooper()).post(() -> {
                     callback.onPlaylistLoaded(null);
                 });
@@ -167,14 +167,14 @@ public class PlaylistManager {
                     
                     if (line.startsWith("#EXTINF:")) {
                         android.util.Log.d("PlaylistManager", "Processing EXTINF line: " + line);
-                        // Parse channel info
+                        
                         int nameStart = line.lastIndexOf(",");
                         if (nameStart != -1) {
                             currentName = line.substring(nameStart + 1).trim();
                             android.util.Log.d("PlaylistManager", "Found channel name: " + currentName);
                         }
                         
-                        // Parse tvg-logo if present
+                        
                         int logoStart = line.indexOf("tvg-logo=\"");
                         if (logoStart != -1) {
                             int logoEnd = line.indexOf("\"", logoStart + 10);
@@ -184,7 +184,7 @@ public class PlaylistManager {
                             }
                         }
                         
-                        // Parse group-title if present
+                        
                         int groupStart = line.indexOf("group-title=\"");
                         if (groupStart != -1) {
                             int groupEnd = line.indexOf("\"", groupStart + 13);
@@ -194,7 +194,7 @@ public class PlaylistManager {
                             }
                         }
                     } else if (!line.startsWith("#") && !line.isEmpty() && currentName != null) {
-                        // This is a URL line
+                        
                         android.util.Log.d("PlaylistManager", "Creating channel with URL: " + line);
                         Channel channel = new Channel.Builder()
                             .name(currentName)
@@ -227,7 +227,7 @@ public class PlaylistManager {
             String entry = isFile ? "file://" + playlistUrl : playlistUrl;
             recentPlaylists.add(entry);
             
-            // Maintain max size
+            
             if (recentPlaylists.size() > MAX_RECENT_PLAYLISTS) {
                 ArrayList<String> list = new ArrayList<>(recentPlaylists);
                 recentPlaylists = new HashSet<>(list.subList(list.size() - MAX_RECENT_PLAYLISTS, list.size()));
@@ -236,7 +236,7 @@ public class PlaylistManager {
             prefs.edit().putStringSet(RECENT_PLAYLISTS_KEY, recentPlaylists).apply();
         } catch (Exception e) {
             android.util.Log.e("PlaylistManager", "Error adding to recent playlists", e);
-            // Clear the preferences if there's an error
+            
             prefs.edit().remove(RECENT_PLAYLISTS_KEY).apply();
         }
     }
@@ -251,7 +251,7 @@ public class PlaylistManager {
             Set<String> recentSet = prefs.getStringSet(RECENT_PLAYLISTS_KEY, new HashSet<>());
             return recentSet != null ? new ArrayList<>(recentSet) : new ArrayList<>();
         } catch (ClassCastException e) {
-            // If there's a type mismatch, clear the data and return empty list
+            
             prefs.edit().remove(RECENT_PLAYLISTS_KEY).apply();
             return new ArrayList<>();
         }
@@ -263,7 +263,7 @@ public class PlaylistManager {
 
     public String getPlaylistPath(String url) {
         if (isFilePlaylist(url)) {
-            return url.substring(7); // Remove "file://" prefix
+            return url.substring(7); 
         }
         return url;
     }

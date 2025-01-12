@@ -324,11 +324,6 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onPlayerSourceChanged(String playerSource) {
-        
-        if (preferenceManager != null) {
-            preferenceManager.setPlayerSource(playerSource);
-            android.util.Log.d("MainActivity", "Player source changed to: " + playerSource);
-        }
     }
 
     @Override

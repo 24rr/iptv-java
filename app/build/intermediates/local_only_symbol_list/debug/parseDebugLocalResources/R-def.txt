@@ -18,6 +18,7 @@ drawable ic_format
 drawable ic_history
 drawable ic_info
 drawable ic_iptvnator
+drawable ic_play
 drawable ic_player
 drawable ic_search
 drawable ic_settings
@@ -27,6 +28,7 @@ drawable ic_tv
 drawable settings_item_background
 id action_search
 id action_sort
+id channel_group
 id channel_icon
 id channel_list
 id channel_name

@@ -34,27 +34,27 @@ public class IPTVPlayer {
 
     private void initializePlayer() {
         try {
-            // Create HTTP data source factory
+            
             httpDataSourceFactory = new DefaultHttpDataSource.Factory()
                 .setUserAgent("iptvnator-android")
                 .setConnectTimeoutMs(15000)
                 .setReadTimeoutMs(15000)
                 .setAllowCrossProtocolRedirects(true);
 
-            // Create media source factory
+            
             DefaultMediaSourceFactory mediaSourceFactory = new DefaultMediaSourceFactory(context)
                 .setDataSourceFactory(httpDataSourceFactory);
 
-            // Create player
+            
             player = new ExoPlayer.Builder(context)
                 .setMediaSourceFactory(mediaSourceFactory)
                 .build();
 
-            // Configure player view
+            
             playerView.setPlayer(player);
             playerView.setKeepScreenOn(true);
 
-            // Add listener
+            
             player.addListener(new Player.Listener() {
                 @Override
                 public void onPlayerError(PlaybackException error) {
@@ -104,20 +104,29 @@ public class IPTVPlayer {
                 android.util.Log.d("IPTVPlayer", "Using DRM: " + drmConfig.getScheme());
             }
 
+            
             MediaItem.Builder mediaItemBuilder = new MediaItem.Builder()
                 .setUri(url);
 
+            
             if (drmConfig != null && drmConfig.isValid()) {
-                MediaItem.DrmConfiguration mediaDrmConfig = drmConfig.buildMediaDrmConfiguration();
-                if (mediaDrmConfig != null) {
-                    mediaItemBuilder.setDrmConfiguration(mediaDrmConfig);
+                
+                var drmSessionManager = drmConfig.buildDrmSessionManager();
+                if (drmSessionManager != null) {
+                    
+                    DefaultMediaSourceFactory mediaSourceFactory = new DefaultMediaSourceFactory(context)
+                        .setDataSourceFactory(httpDataSourceFactory)
+                        .setDrmSessionManagerProvider(mediaType -> drmSessionManager);
+
+                    
+                    player.setMediaSource(mediaSourceFactory.createMediaSource(mediaItemBuilder.build()));
+
+                    
+                    MediaItem mediaItem = mediaItemBuilder.build();
+                    player.prepare();
+                    player.play();
                 }
             }
-
-            MediaItem mediaItem = mediaItemBuilder.build();
-            player.setMediaItem(mediaItem);
-            player.prepare();
-            player.play();
 
         } catch (Exception e) {
             if (callback != null) {

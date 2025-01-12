@@ -10,10 +10,10 @@ import java.util.regex.Matcher;
 public class PlaylistParser {
     public static Playlist parse(String content) throws IllegalArgumentException {
         try {
-            // Normalize content
+            
             content = content.trim();
-            content = content.replace("\uFEFF", ""); // Remove BOM
-            content = content.replace("\r\n", "\n").replace("\r", "\n"); // Normalize line endings
+            content = content.replace("\uFEFF", ""); 
+            content = content.replace("\r\n", "\n").replace("\r", "\n"); 
 
             android.util.Log.d("PlaylistParser", "Starting to parse playlist content");
             android.util.Log.d("PlaylistParser", "Content starts with: " + content.substring(0, Math.min(content.length(), 100)));
@@ -37,13 +37,13 @@ public class PlaylistParser {
                     currentChannel = new Channel.Builder();
                     currentChannel.group("Ungrouped");
 
-                    // Parse channel info
+                    
                     String[] tvgId = findMatch(line, "tvg-id=\"([^\"]*)\"");
                     String[] tvgName = findMatch(line, "tvg-name=\"([^\"]*)\"");
                     String[] tvgLogo = findMatch(line, "tvg-logo=\"([^\"]*)\"");
                     String[] groupTitle = findMatch(line, "group-title=\"([^\"]*)\"");
                     
-                    // Alternative logo formats
+                    
                     if (tvgLogo == null || tvgLogo[1].isEmpty()) {
                         tvgLogo = findMatch(line, "logo=\"([^\"]*)\"");
                         if (tvgLogo == null || tvgLogo[1].isEmpty()) {
@@ -54,7 +54,7 @@ public class PlaylistParser {
                         }
                     }
 
-                    // Alternative group formats
+                    
                     if (groupTitle == null || groupTitle[1].isEmpty()) {
                         groupTitle = findMatch(line, "group='([^']*)'");
                         if (groupTitle == null || groupTitle[1].isEmpty()) {
@@ -62,7 +62,7 @@ public class PlaylistParser {
                         }
                     }
 
-                    // Extract channel name from the end of EXTINF line
+                    
                     String[] channelName = findMatch(line, ",(.*)$");
 
                     String name = channelName != null ? channelName[1].trim() : "Unnamed Channel";
@@ -88,7 +88,7 @@ public class PlaylistParser {
                         String licenseKey = drmLine.split("=")[1];
                         if (drmConfig == null) {
                             drmConfig = new Channel.DrmConfig();
-                            drmConfig.setType("clearkey"); // Default to clearkey if type not specified
+                            drmConfig.setType("clearkey"); 
                         }
                         drmConfig.setLicenseKey(licenseKey);
                         android.util.Log.d("PlaylistParser", "Found license key: " + licenseKey);

@@ -44,7 +44,7 @@ public class JWPlayerLicenseDialog extends DialogFragment {
         
         EditText licenseInput = view.findViewById(R.id.license_input);
         
-        // Load saved license if exists
+        
         SharedPreferences prefs = requireContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         String savedLicense = prefs.getString(JW_LICENSE_KEY, "");
         licenseInput.setText(savedLicense);
@@ -54,7 +54,7 @@ public class JWPlayerLicenseDialog extends DialogFragment {
             .setPositiveButton("Save", (dialog, id) -> {
                 String license = licenseInput.getText().toString().trim();
                 if (!license.isEmpty()) {
-                    // Save license
+                    
                     prefs.edit().putString(JW_LICENSE_KEY, license).apply();
                     listener.onLicenseSet(license);
                 }

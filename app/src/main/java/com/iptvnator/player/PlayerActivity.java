@@ -139,11 +139,7 @@ public class PlayerActivity extends AppCompatActivity {
                             throw new IllegalArgumentException("Invalid ClearKey format. Expected format: keyId:key");
                         }
                         
-                        
-                        String keyId = android.util.Base64.encodeToString(hexStringToByteArray(keyParts[0]), android.util.Base64.NO_WRAP);
-                        String key = android.util.Base64.encodeToString(hexStringToByteArray(keyParts[1]), android.util.Base64.NO_WRAP);
-                        
-                        drmConfig = new DrmConfiguration("clearkey", keyId, key);
+                        drmConfig = new DrmConfiguration("clearkey", keyParts[0], keyParts[1]);
                     }
                 }
                 
@@ -160,16 +156,6 @@ public class PlayerActivity extends AppCompatActivity {
         } else {
             Snackbar.make(playerView, "Invalid channel URL", Snackbar.LENGTH_LONG).show();
         }
-    }
-
-    private static byte[] hexStringToByteArray(String s) {
-        int len = s.length();
-        byte[] data = new byte[len / 2];
-        for (int i = 0; i < len; i += 2) {
-            data[i / 2] = (byte) ((Character.digit(s.charAt(i), 16) << 4)
-                    + Character.digit(s.charAt(i + 1), 16));
-        }
-        return data;
     }
 
     @Override

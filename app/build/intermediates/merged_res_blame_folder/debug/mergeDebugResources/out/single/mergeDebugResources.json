@@ -1,110 +1,114 @@
 [
     {
-        "merged": "com.iptvnator.app-debug-41:/drawable_ic_iptvnator.xml.flat",
-        "source": "com.iptvnator.app-main-43:/drawable/ic_iptvnator.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\drawable_ic_channel_placeholder.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\drawable\\ic_channel_placeholder.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/drawable_ic_format.xml.flat",
-        "source": "com.iptvnator.app-main-43:/drawable/ic_format.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\layout_activity_player.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\layout\\activity_player.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/drawable_ic_sort.xml.flat",
-        "source": "com.iptvnator.app-main-43:/drawable/ic_sort.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/layout_activity_settings.xml.flat",
-        "source": "com.iptvnator.app-main-43:/layout/activity_settings.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\drawable_ic_favorite.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\drawable\\ic_favorite.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/layout_activity_main.xml.flat",
-        "source": "com.iptvnator.app-main-43:/layout/activity_main.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\layout_item_recent_playlist.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\layout\\item_recent_playlist.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/layout_player_selection_sheet.xml.flat",
-        "source": "com.iptvnator.app-main-43:/layout/player_selection_sheet.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\drawable_ic_tv.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\drawable\\ic_tv.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/drawable_bottom_sheet_background.xml.flat",
-        "source": "com.iptvnator.app-main-43:/drawable/bottom_sheet_background.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\drawable_ic_iptvnator.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\drawable\\ic_iptvnator.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/layout_item_recent_playlist.xml.flat",
-        "source": "com.iptvnator.app-main-43:/layout/item_recent_playlist.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\drawable_ic_player.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\drawable\\ic_player.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/layout_dialog_settings.xml.flat",
-        "source": "com.iptvnator.app-main-43:/layout/dialog_settings.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\layout\\activity_settings.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/menu_player_menu.xml.flat",
-        "source": "com.iptvnator.app-main-43:/menu/player_menu.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\drawable_settings_item_background.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\drawable\\settings_item_background.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.iptvnator.app-main-43:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\drawable_ic_history.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\drawable\\ic_history.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.iptvnator.app-main-43:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\layout_dialog_settings.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\layout\\dialog_settings.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/drawable_ic_back.xml.flat",
-        "source": "com.iptvnator.app-main-43:/drawable/ic_back.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/drawable_ic_tv.xml.flat",
-        "source": "com.iptvnator.app-main-43:/drawable/ic_tv.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\drawable_ic_search.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\drawable\\ic_search.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/drawable_ic_history.xml.flat",
-        "source": "com.iptvnator.app-main-43:/drawable/ic_history.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\drawable_ic_theme.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\drawable\\ic_theme.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/drawable_ic_channel_placeholder.xml.flat",
-        "source": "com.iptvnator.app-main-43:/drawable/ic_channel_placeholder.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\xml_preferences.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\xml\\preferences.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/drawable_ic_player.xml.flat",
-        "source": "com.iptvnator.app-main-43:/drawable/ic_player.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\drawable_ic_format.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\drawable\\ic_format.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/layout_activity_player.xml.flat",
-        "source": "com.iptvnator.app-main-43:/layout/activity_player.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\drawable_ic_info.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\drawable\\ic_info.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/drawable_settings_item_background.xml.flat",
-        "source": "com.iptvnator.app-main-43:/drawable/settings_item_background.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/layout_item_channel.xml.flat",
-        "source": "com.iptvnator.app-main-43:/layout/item_channel.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\layout_item_channel.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\layout\\item_channel.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/drawable_ic_info.xml.flat",
-        "source": "com.iptvnator.app-main-43:/drawable/ic_info.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\layout_player_selection_sheet.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\layout\\player_selection_sheet.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/layout_dialog_jw_license.xml.flat",
-        "source": "com.iptvnator.app-main-43:/layout/dialog_jw_license.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\drawable_bottom_sheet_background.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\drawable\\bottom_sheet_background.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/drawable_ic_search.xml.flat",
-        "source": "com.iptvnator.app-main-43:/drawable/ic_search.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\drawable_ic_settings.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\drawable\\ic_settings.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/drawable_ic_theme.xml.flat",
-        "source": "com.iptvnator.app-main-43:/drawable/ic_theme.xml"
+        "merged": "com.iptvnator.app-debug-41:/drawable_ic_play.xml.flat",
+        "source": "com.iptvnator.app-main-43:/drawable/ic_play.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/drawable_ic_settings.xml.flat",
-        "source": "com.iptvnator.app-main-43:/drawable/ic_settings.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\menu_player_menu.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\menu\\player_menu.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/xml_preferences.xml.flat",
-        "source": "com.iptvnator.app-main-43:/xml/preferences.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\drawable_ic_back.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\drawable\\ic_back.xml"
     },
     {
-        "merged": "com.iptvnator.app-debug-41:/drawable_ic_favorite.xml.flat",
-        "source": "com.iptvnator.app-main-43:/drawable/ic_favorite.xml"
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\drawable_ic_sort.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\drawable\\ic_sort.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-debug-41:\\layout_dialog_jw_license.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.9\\com.iptvnator.app-main-43:\\layout\\dialog_jw_license.xml"
     }
 ]

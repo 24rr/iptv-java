@@ -24,7 +24,7 @@ public class PreferenceManager {
         Set<String> recentUrls = new HashSet<>(prefs.getStringSet(KEY_RECENT_PLAYLISTS, new HashSet<>()));
         recentUrls.add(url);
         
-        // Ensure we don't exceed the maximum number of recent playlists
+        
         if (recentUrls.size() > MAX_RECENT_PLAYLISTS) {
             List<String> urlList = new ArrayList<>(recentUrls);
             urlList.remove(0);

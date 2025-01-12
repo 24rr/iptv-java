@@ -50,7 +50,7 @@ public class SettingsBottomSheetDialog extends BottomSheetDialogFragment {
         playerValue = view.findViewById(R.id.player_value);
         MaterialButton clearPlaylistsButton = view.findViewById(R.id.clear_playlists_button);
 
-        // Theme settings
+        
         boolean isDarkMode = preferenceManager.isDarkMode();
         themeValue.setText(isDarkMode ? "Dark Mode" : "Light Mode");
         view.findViewById(R.id.theme_container).setOnClickListener(v -> {
@@ -62,7 +62,7 @@ public class SettingsBottomSheetDialog extends BottomSheetDialogFragment {
             }
         });
 
-        // Player source settings
+        
         String currentPlayer = preferenceManager.getPlayerSource();
         playerValue.setText(currentPlayer);
         view.findViewById(R.id.player_container).setOnClickListener(v -> {
@@ -74,7 +74,7 @@ public class SettingsBottomSheetDialog extends BottomSheetDialogFragment {
             }
         });
 
-        // Clear playlists
+        
         clearPlaylistsButton.setOnClickListener(v -> {
             if (listener != null) {
                 listener.onClearRecentPlaylists();
@@ -82,9 +82,9 @@ public class SettingsBottomSheetDialog extends BottomSheetDialogFragment {
             dismiss();
         });
 
-        // Supported formats
+        
         view.findViewById(R.id.formats_container).setOnClickListener(v -> {
-            // TODO: Show supported formats dialog
+            
         });
     }
 } 
