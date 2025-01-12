@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:key="playback_category"
+        app:title="Playback Settings">
+
+        <SwitchPreferenceCompat
+            app:key="auto_play"
+            app:title="Auto-play channels"
+            app:summary="Automatically start playback when selecting a channel"
+            app:defaultValue="true"/>
+
+        <ListPreference
+            app:key="default_player"
+            app:title="Default Player"
+            app:summary="Choose the default video player"
+            app:entries="@array/player_entries"
+            app:entryValues="@array/player_values"
+            app:defaultValue="exoplayer"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="playlist_category"
+        app:title="Playlist Settings">
+
+        <SwitchPreferenceCompat
+            app:key="auto_update"
+            app:title="Auto-update playlists"
+            app:summary="Automatically update playlists when launching the app"
+            app:defaultValue="true"/>
+
+        <EditTextPreference
+            app:key="update_interval"
+            app:title="Update Interval"
+            app:summary="How often to check for playlist updates (in hours)"
+            app:defaultValue="24"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen> 
