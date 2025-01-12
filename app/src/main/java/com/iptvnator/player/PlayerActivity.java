@@ -33,7 +33,7 @@ public class PlayerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Get theme preference and set it
+        
         if (getSharedPreferences("IPTVnatorPrefs", MODE_PRIVATE).getBoolean("dark_mode", false)) {
             setTheme(R.style.AppTheme_Dark);
         } else {
@@ -109,7 +109,7 @@ public class PlayerActivity extends AppCompatActivity {
 
                 @Override
                 public void onProgress(long position, long duration) {
-                    // Handle progress updates if needed
+                    
                 }
             });
         } catch (Exception e) {
@@ -124,7 +124,7 @@ public class PlayerActivity extends AppCompatActivity {
                 android.util.Log.d("PlayerActivity", "Loading channel: " + channel.getName());
                 android.util.Log.d("PlayerActivity", "URL: " + channel.getUrl());
                 
-                // Configure DRM if needed
+                
                 Channel.DrmConfig channelDrmConfig = channel.getDrmConfig();
                 DrmConfiguration drmConfig = null;
                 
@@ -133,13 +133,13 @@ public class PlayerActivity extends AppCompatActivity {
                             ", license=" + channelDrmConfig.getLicenseKey().substring(0, Math.min(20, channelDrmConfig.getLicenseKey().length())) + "...");
                             
                     if ("clearkey".equals(channelDrmConfig.getType())) {
-                        // Parse key ID and key from license
+                        
                         String[] keyParts = channelDrmConfig.getLicenseKey().split(":");
                         if (keyParts.length != 2) {
                             throw new IllegalArgumentException("Invalid ClearKey format. Expected format: keyId:key");
                         }
                         
-                        // Convert hex to base64
+                        
                         String keyId = android.util.Base64.encodeToString(hexStringToByteArray(keyParts[0]), android.util.Base64.NO_WRAP);
                         String key = android.util.Base64.encodeToString(hexStringToByteArray(keyParts[1]), android.util.Base64.NO_WRAP);
                         

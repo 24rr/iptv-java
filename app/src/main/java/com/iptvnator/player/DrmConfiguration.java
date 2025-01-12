@@ -81,11 +81,11 @@ public class DrmConfiguration {
 
         if ("clearkey".equals(scheme.toLowerCase())) {
             try {
-                // Create JSON format for ClearKey
+                
                 String jsonTemplate = "{\"keys\":[{\"kty\":\"oct\",\"k\":\"%s\",\"kid\":\"%s\"}]}";
                 String json = String.format(jsonTemplate, key, keyId);
                 
-                // Convert to bytes
+                
                 byte[] keySetId = json.getBytes();
                 
                 builder.setKeySetId(keySetId)
@@ -113,7 +113,7 @@ public class DrmConfiguration {
     }
 
     public static DrmConfiguration fromUrl(String url) {
-        // Example URL format: drm://clearkey?kid=abcdef&key=123456
+        
         if (url == null || !url.startsWith("drm://")) {
             return null;
         }
@@ -152,4 +152,4 @@ public class DrmConfiguration {
             return null;
         }
     }
-} 
+}
